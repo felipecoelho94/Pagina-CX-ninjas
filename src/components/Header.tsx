@@ -17,9 +17,6 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#home" className="text-foreground hover:text-ninja-purple transition-colors">
-            Início
-          </a>
           <a href="#services" className="text-foreground hover:text-ninja-purple transition-colors">
             Serviços
           </a>
