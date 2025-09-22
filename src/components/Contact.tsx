@@ -3,8 +3,38 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { FormEvent, useState } from "react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!name || !email || !message) {
+      toast.error("Por favor, preencha os campos obrigatórios.");
+      return;
+    }
+
+    // Here you would typically send the form data to a server
+    console.log({ name, email, company, phone, message });
+
+    toast.success("Sua solicitação foi enviada com sucesso!");
+
+    // Clear form fields
+    setName("");
+    setEmail("");
+    setCompany("");
+    setPhone("");
+    setMessage("");
+  };
+
   return (
     <section id="contact" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -84,27 +114,33 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         Nome Completo
                       </label>
-                      <Input 
-                        id="name" 
+                      <Input
+                        id="name"
                         placeholder="Seu nome completo"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         className="bg-background border-border"
+                        required
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">
                         Email
                       </label>
-                      <Input 
-                        id="email" 
-                        type="email" 
+                      <Input
+                        id="email"
+                        type="email"
                         placeholder="seu.email@empresa.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         className="bg-background border-border"
+                        required
                       />
                     </div>
                   </div>
@@ -114,9 +150,11 @@ const Contact = () => {
                       <label htmlFor="company" className="block text-sm font-medium mb-2">
                         Empresa
                       </label>
-                      <Input 
-                        id="company" 
+                      <Input
+                        id="company"
                         placeholder="Nome da sua empresa"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
                         className="bg-background border-border"
                       />
                     </div>
@@ -124,9 +162,11 @@ const Contact = () => {
                       <label htmlFor="phone" className="block text-sm font-medium mb-2">
                         Telefone
                       </label>
-                      <Input 
-                        id="phone" 
+                      <Input
+                        id="phone"
                         placeholder="(11) 99999-9999"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                         className="bg-background border-border"
                       />
                     </div>
@@ -136,15 +176,18 @@ const Contact = () => {
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Como podemos ajudar?
                     </label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
                       placeholder="Conte-nos sobre seus desafios de Customer Experience..."
                       rows={4}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       className="bg-background border-border"
+                      required
                     />
                   </div>
 
-                  <Button variant="ninja" size="lg" className="w-full">
+                  <Button type="submit" variant="ninja" size="lg" className="w-full">
                     Enviar Solicitação
                     <Send className="ml-2 h-5 w-5" />
                   </Button>
