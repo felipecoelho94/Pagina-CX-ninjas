@@ -89,7 +89,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Localização</h3>
-                    <p className="text-muted-foreground">Belo horizonte, MG</p>
+                    <p className="text-muted-foreground">Belo Horizonte, MG</p>
                   </div>
                 </div>
               </CardContent>

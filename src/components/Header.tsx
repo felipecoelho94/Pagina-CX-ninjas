@@ -9,7 +9,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/a60216fb-d9dc-4bf9-82cc-d6fef4223ae6.png" 
             alt="CX Ninjas Logo" 
-            className="w-24 h-20 object-contain"
+            className="w-24 h-20 object-contain animate-float"
           />
           <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             CX Ninjas
