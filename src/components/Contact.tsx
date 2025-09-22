@@ -61,7 +61,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-muted-foreground">contato@cxninjas.com</p>
+                    <p className="text-muted-foreground">contato@tecnasistemas.com.br</p>
                   </div>
                 </div>
               </CardContent>
@@ -75,7 +75,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Telefone</h3>
-                    <p className="text-muted-foreground">+55 (11) 9999-9999</p>
+                    <p className="text-muted-foreground">+55 (31) 3181-1515</p>
                   </div>
                 </div>
               </CardContent>
@@ -89,7 +89,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Localização</h3>
-                    <p className="text-muted-foreground">São Paulo, SP</p>
+                    <p className="text-muted-foreground">Belo horizonte, MG</p>
                   </div>
                 </div>
               </CardContent>
