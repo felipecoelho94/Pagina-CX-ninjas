@@ -81,7 +81,7 @@ const Footer = () => {
             © 2024 CX Ninjas. Todos os direitos reservados.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-muted-foreground hover:text-ninja-purple text-sm transition-colors">
+            <a href="/privacy-policy" className="text-muted-foreground hover:text-ninja-purple text-sm transition-colors">
               Política de Privacidade
             </a>
             <a href="#" className="text-muted-foreground hover:text-ninja-purple text-sm transition-colors">
