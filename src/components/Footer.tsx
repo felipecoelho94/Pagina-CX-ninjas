@@ -10,12 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src="/lovable-uploads/a60216fb-d9dc-4bf9-82cc-d6fef4223ae6.png" 
-                alt="CX Ninjas Logo" 
-                className="w-14 h-12 object-contain"
-              />
-              <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                      <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 CX Ninjas
               </h3>
             </div>

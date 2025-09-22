@@ -97,11 +97,7 @@ const Contact = () => {
 
             {/* Ninja mascot */}
             <div className="flex justify-center pt-8">
-              <img 
-                src="/lovable-uploads/a60216fb-d9dc-4bf9-82cc-d6fef4223ae6.png" 
-                alt="CX Ninjas Mascot" 
-                className="w-28 h-24 animate-float object-contain"
-              />
+  
             </div>
           </div>
 
