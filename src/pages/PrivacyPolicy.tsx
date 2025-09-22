@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import PrivacyHeader from "@/components/PrivacyHeader";
 import { FC } from 'react';
 
@@ -46,6 +47,7 @@ const PrivacyPolicy: FC = () => {
         Esta política é efetiva a partir de <strong>Setembro/2023</strong>.
       </p>
     </div>
+    <Footer />
     </>
   );
 };
