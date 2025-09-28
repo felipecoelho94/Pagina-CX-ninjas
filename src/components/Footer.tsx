@@ -1,8 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, Linkedin, Instagram, Youtube } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (section: string) => {
+    if (location.pathname === '/') {
+      // Se já estamos na página principal, apenas faz scroll para a seção
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se estamos em outra página, navega para a página principal e depois para a seção
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <footer className="bg-ninja-dark pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -36,19 +59,28 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Links Rápidos</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-muted-foreground hover:text-ninja-purple transition-colors">
+                <button 
+                  onClick={() => handleNavigation('home')} 
+                  className="text-muted-foreground hover:text-ninja-purple transition-colors text-left"
+                >
                   Início
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-ninja-purple transition-colors">
+                <button 
+                  onClick={() => handleNavigation('services')} 
+                  className="text-muted-foreground hover:text-ninja-purple transition-colors text-left"
+                >
                   Serviços
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#about" className="text-muted-foreground hover:text-ninja-purple transition-colors">
+                <button 
+                  onClick={() => handleNavigation('about')} 
+                  className="text-muted-foreground hover:text-ninja-purple transition-colors text-left"
+                >
                   Sobre
-                </a>
+                </button>
               </li>
             </ul>
           </div>

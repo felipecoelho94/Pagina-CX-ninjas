@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [name, setName] = useState("");
